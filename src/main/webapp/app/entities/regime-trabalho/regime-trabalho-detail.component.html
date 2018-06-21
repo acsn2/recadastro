@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="regimeTrabalho">
+            <h2><span>Regime Trabalho</span> {{regimeTrabalho.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Cod Reg Trab</span></dt>
+                <dd>
+                    <span>{{regimeTrabalho.codRegTrab}}</span>
+                </dd>
+                <dt><span>Desc Reg Trab</span></dt>
+                <dd>
+                    <span>{{regimeTrabalho.descRegTrab}}</span>
+                </dd>
+                <dt><span>Regime Trabalho</span></dt>
+                <dd>
+                    <div *ngIf="regimeTrabalho.regimeTrabalho">
+                        <a [routerLink]="['/servidor', regimeTrabalho.regimeTrabalho?.id, 'view']">{{regimeTrabalho.regimeTrabalho?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/regime-trabalho', regimeTrabalho.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

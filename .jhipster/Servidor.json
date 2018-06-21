@@ -1,0 +1,491 @@
+{
+    "name": "Servidor",
+    "fields": [
+        {
+            "fieldName": "matricula",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "username",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nomeSocial",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "datNascimento",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nomePai",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nomeMae",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cpf",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cpfPai",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "cpfMae",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "rgNum",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "rgUf",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "rgOrgaoExp",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "rgDataExp",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sexo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tipoSangue",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fatorRh",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "doadorSangue",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deficienciaFisica",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deficienciaVisual",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deficienciaAuditiva",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deficienciaMental",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deficienciaIntelec",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deficReabReadaptado",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deficObservacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "preencheCota",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "emailPessoal",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "emailAltern",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "celular",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "celularOperadora",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pasep",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "ipsep",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inss",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ctpsNum",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ctpsSerie",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ctpsEmissao",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "ctpsUf",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgaoClasseNum",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgaoClNome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgaoClUf",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orclDtaExp",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "orclDtaValid",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "reservista",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reservistaClasse",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numRIC",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgaoEmissorRIC",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ufRIC",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "datExpedRIC",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "titEleitorNum",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "titEleitorZona",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "titEleitorSecao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "titEleitorLocal",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cnhNum",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cnhCategoria",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cnhDatValidade",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "cnhDatExped",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "cnhUfEmissor",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cnhDatPrimHab",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "sassepeNum",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ufNatural",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "primEmprego",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "exercMagisterio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipoLogradouro",
+            "javadoc": "1- Regime Geral da Previdência Social - RGPS\n2- Regime Próprio de Previdência Social - RPPS\n3- Regime de Previdência Social no Exterior",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descLogradouro",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nrEndereco",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "complEndereco",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "bairroEndereco",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cepEndereco",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "ufEndereco",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "telefone1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefone2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descLograExt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nrLograExt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "complLograExt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bairroEndExt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cidadeEndExt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codPostalEndExt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numRne",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgaoEmissorRNE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ufEmissorRNE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "datExpeRNE",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "datChegada",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "classTrabEstr",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "casadoBR",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "filhosBRr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "auxTransporte",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "auxTransLinha1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "auxTransLinha2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "auxTransLinha3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "auxTransLinha4",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "trabAposentado",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "serMatricula",
+            "otherEntityName": "dependente",
+            "otherEntityRelationshipName": "servidor"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "serMatricula",
+            "otherEntityName": "parenteServidor",
+            "otherEntityRelationshipName": "servidor"
+        }
+    ],
+    "changelogDate": "20180621204751",
+    "entityTableName": "servidor",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

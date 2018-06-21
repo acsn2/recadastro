@@ -1,0 +1,35 @@
+{
+    "name": "Escolaridade",
+    "fields": [
+        {
+            "fieldName": "codEscolaridade",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descEscolaridade",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "escolaridade",
+            "otherEntityName": "servidor",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "escolaridade"
+        }
+    ],
+    "changelogDate": "20180621204800",
+    "entityTableName": "escolaridade",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

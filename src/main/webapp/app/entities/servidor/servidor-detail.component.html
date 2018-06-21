@@ -1,0 +1,385 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="servidor">
+            <h2><span>Servidor</span> {{servidor.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Matricula</span></dt>
+                <dd>
+                    <span>{{servidor.matricula}}</span>
+                </dd>
+                <dt><span>Username</span></dt>
+                <dd>
+                    <span>{{servidor.username}}</span>
+                </dd>
+                <dt><span>Nome Social</span></dt>
+                <dd>
+                    <span>{{servidor.nomeSocial}}</span>
+                </dd>
+                <dt><span>Dat Nascimento</span></dt>
+                <dd>
+                    <span>{{servidor.datNascimento}}</span>
+                </dd>
+                <dt><span>Nome Pai</span></dt>
+                <dd>
+                    <span>{{servidor.nomePai}}</span>
+                </dd>
+                <dt><span>Nome Mae</span></dt>
+                <dd>
+                    <span>{{servidor.nomeMae}}</span>
+                </dd>
+                <dt><span>Cpf</span></dt>
+                <dd>
+                    <span>{{servidor.cpf}}</span>
+                </dd>
+                <dt><span>Cpf Pai</span></dt>
+                <dd>
+                    <span>{{servidor.cpfPai}}</span>
+                </dd>
+                <dt><span>Cpf Mae</span></dt>
+                <dd>
+                    <span>{{servidor.cpfMae}}</span>
+                </dd>
+                <dt><span>Rg Num</span></dt>
+                <dd>
+                    <span>{{servidor.rgNum}}</span>
+                </dd>
+                <dt><span>Rg Uf</span></dt>
+                <dd>
+                    <span>{{servidor.rgUf}}</span>
+                </dd>
+                <dt><span>Rg Orgao Exp</span></dt>
+                <dd>
+                    <span>{{servidor.rgOrgaoExp}}</span>
+                </dd>
+                <dt><span>Rg Data Exp</span></dt>
+                <dd>
+                    <span>{{servidor.rgDataExp}}</span>
+                </dd>
+                <dt><span>Sexo</span></dt>
+                <dd>
+                    <span>{{servidor.sexo}}</span>
+                </dd>
+                <dt><span>Tipo Sangue</span></dt>
+                <dd>
+                    <span>{{servidor.tipoSangue}}</span>
+                </dd>
+                <dt><span>Fator Rh</span></dt>
+                <dd>
+                    <span>{{servidor.fatorRh}}</span>
+                </dd>
+                <dt><span>Doador Sangue</span></dt>
+                <dd>
+                    <span>{{servidor.doadorSangue}}</span>
+                </dd>
+                <dt><span>Deficiencia Fisica</span></dt>
+                <dd>
+                    <span>{{servidor.deficienciaFisica}}</span>
+                </dd>
+                <dt><span>Deficiencia Visual</span></dt>
+                <dd>
+                    <span>{{servidor.deficienciaVisual}}</span>
+                </dd>
+                <dt><span>Deficiencia Auditiva</span></dt>
+                <dd>
+                    <span>{{servidor.deficienciaAuditiva}}</span>
+                </dd>
+                <dt><span>Deficiencia Mental</span></dt>
+                <dd>
+                    <span>{{servidor.deficienciaMental}}</span>
+                </dd>
+                <dt><span>Deficiencia Intelec</span></dt>
+                <dd>
+                    <span>{{servidor.deficienciaIntelec}}</span>
+                </dd>
+                <dt><span>Defic Reab Readaptado</span></dt>
+                <dd>
+                    <span>{{servidor.deficReabReadaptado}}</span>
+                </dd>
+                <dt><span>Defic Observacao</span></dt>
+                <dd>
+                    <span>{{servidor.deficObservacao}}</span>
+                </dd>
+                <dt><span>Preenche Cota</span></dt>
+                <dd>
+                    <span>{{servidor.preencheCota}}</span>
+                </dd>
+                <dt><span>Email Pessoal</span></dt>
+                <dd>
+                    <span>{{servidor.emailPessoal}}</span>
+                </dd>
+                <dt><span>Email Altern</span></dt>
+                <dd>
+                    <span>{{servidor.emailAltern}}</span>
+                </dd>
+                <dt><span>Celular</span></dt>
+                <dd>
+                    <span>{{servidor.celular}}</span>
+                </dd>
+                <dt><span>Celular Operadora</span></dt>
+                <dd>
+                    <span>{{servidor.celularOperadora}}</span>
+                </dd>
+                <dt><span>Pasep</span></dt>
+                <dd>
+                    <span>{{servidor.pasep}}</span>
+                </dd>
+                <dt><span>Ipsep</span></dt>
+                <dd>
+                    <span>{{servidor.ipsep}}</span>
+                </dd>
+                <dt><span>Inss</span></dt>
+                <dd>
+                    <span>{{servidor.inss}}</span>
+                </dd>
+                <dt><span>Ctps Num</span></dt>
+                <dd>
+                    <span>{{servidor.ctpsNum}}</span>
+                </dd>
+                <dt><span>Ctps Serie</span></dt>
+                <dd>
+                    <span>{{servidor.ctpsSerie}}</span>
+                </dd>
+                <dt><span>Ctps Emissao</span></dt>
+                <dd>
+                    <span>{{servidor.ctpsEmissao}}</span>
+                </dd>
+                <dt><span>Ctps Uf</span></dt>
+                <dd>
+                    <span>{{servidor.ctpsUf}}</span>
+                </dd>
+                <dt><span>Orgao Classe Num</span></dt>
+                <dd>
+                    <span>{{servidor.orgaoClasseNum}}</span>
+                </dd>
+                <dt><span>Orgao Cl Nome</span></dt>
+                <dd>
+                    <span>{{servidor.orgaoClNome}}</span>
+                </dd>
+                <dt><span>Orgao Cl Uf</span></dt>
+                <dd>
+                    <span>{{servidor.orgaoClUf}}</span>
+                </dd>
+                <dt><span>Orcl Dta Exp</span></dt>
+                <dd>
+                    <span>{{servidor.orclDtaExp}}</span>
+                </dd>
+                <dt><span>Orcl Dta Valid</span></dt>
+                <dd>
+                    <span>{{servidor.orclDtaValid}}</span>
+                </dd>
+                <dt><span>Reservista</span></dt>
+                <dd>
+                    <span>{{servidor.reservista}}</span>
+                </dd>
+                <dt><span>Reservista Classe</span></dt>
+                <dd>
+                    <span>{{servidor.reservistaClasse}}</span>
+                </dd>
+                <dt><span>Num RIC</span></dt>
+                <dd>
+                    <span>{{servidor.numRIC}}</span>
+                </dd>
+                <dt><span>Orgao Emissor RIC</span></dt>
+                <dd>
+                    <span>{{servidor.orgaoEmissorRIC}}</span>
+                </dd>
+                <dt><span>Uf RIC</span></dt>
+                <dd>
+                    <span>{{servidor.ufRIC}}</span>
+                </dd>
+                <dt><span>Dat Exped RIC</span></dt>
+                <dd>
+                    <span>{{servidor.datExpedRIC}}</span>
+                </dd>
+                <dt><span>Tit Eleitor Num</span></dt>
+                <dd>
+                    <span>{{servidor.titEleitorNum}}</span>
+                </dd>
+                <dt><span>Tit Eleitor Zona</span></dt>
+                <dd>
+                    <span>{{servidor.titEleitorZona}}</span>
+                </dd>
+                <dt><span>Tit Eleitor Secao</span></dt>
+                <dd>
+                    <span>{{servidor.titEleitorSecao}}</span>
+                </dd>
+                <dt><span>Tit Eleitor Local</span></dt>
+                <dd>
+                    <span>{{servidor.titEleitorLocal}}</span>
+                </dd>
+                <dt><span>Cnh Num</span></dt>
+                <dd>
+                    <span>{{servidor.cnhNum}}</span>
+                </dd>
+                <dt><span>Cnh Categoria</span></dt>
+                <dd>
+                    <span>{{servidor.cnhCategoria}}</span>
+                </dd>
+                <dt><span>Cnh Dat Validade</span></dt>
+                <dd>
+                    <span>{{servidor.cnhDatValidade}}</span>
+                </dd>
+                <dt><span>Cnh Dat Exped</span></dt>
+                <dd>
+                    <span>{{servidor.cnhDatExped}}</span>
+                </dd>
+                <dt><span>Cnh Uf Emissor</span></dt>
+                <dd>
+                    <span>{{servidor.cnhUfEmissor}}</span>
+                </dd>
+                <dt><span>Cnh Dat Prim Hab</span></dt>
+                <dd>
+                    <span>{{servidor.cnhDatPrimHab}}</span>
+                </dd>
+                <dt><span>Sassepe Num</span></dt>
+                <dd>
+                    <span>{{servidor.sassepeNum}}</span>
+                </dd>
+                <dt><span>Uf Natural</span></dt>
+                <dd>
+                    <span>{{servidor.ufNatural}}</span>
+                </dd>
+                <dt><span>Prim Emprego</span></dt>
+                <dd>
+                    <span>{{servidor.primEmprego}}</span>
+                </dd>
+                <dt><span>Exerc Magisterio</span></dt>
+                <dd>
+                    <span>{{servidor.exercMagisterio}}</span>
+                </dd>
+                <dt><span ngbTooltip="1- Regime Geral da Previdência Social - RGPS
+2- Regime Próprio de Previdência Social - RPPS
+3- Regime de Previdência Social no Exterior">Tipo Logradouro</span></dt>
+                <dd>
+                    <span>{{servidor.tipoLogradouro}}</span>
+                </dd>
+                <dt><span>Desc Logradouro</span></dt>
+                <dd>
+                    <span>{{servidor.descLogradouro}}</span>
+                </dd>
+                <dt><span>Nr Endereco</span></dt>
+                <dd>
+                    <span>{{servidor.nrEndereco}}</span>
+                </dd>
+                <dt><span>Compl Endereco</span></dt>
+                <dd>
+                    <span>{{servidor.complEndereco}}</span>
+                </dd>
+                <dt><span>Bairro Endereco</span></dt>
+                <dd>
+                    <span>{{servidor.bairroEndereco}}</span>
+                </dd>
+                <dt><span>Cep Endereco</span></dt>
+                <dd>
+                    <span>{{servidor.cepEndereco}}</span>
+                </dd>
+                <dt><span>Uf Endereco</span></dt>
+                <dd>
+                    <span>{{servidor.ufEndereco}}</span>
+                </dd>
+                <dt><span>Telefone 1</span></dt>
+                <dd>
+                    <span>{{servidor.telefone1}}</span>
+                </dd>
+                <dt><span>Telefone 2</span></dt>
+                <dd>
+                    <span>{{servidor.telefone2}}</span>
+                </dd>
+                <dt><span>Desc Logra Ext</span></dt>
+                <dd>
+                    <span>{{servidor.descLograExt}}</span>
+                </dd>
+                <dt><span>Nr Logra Ext</span></dt>
+                <dd>
+                    <span>{{servidor.nrLograExt}}</span>
+                </dd>
+                <dt><span>Compl Logra Ext</span></dt>
+                <dd>
+                    <span>{{servidor.complLograExt}}</span>
+                </dd>
+                <dt><span>Bairro End Ext</span></dt>
+                <dd>
+                    <span>{{servidor.bairroEndExt}}</span>
+                </dd>
+                <dt><span>Cidade End Ext</span></dt>
+                <dd>
+                    <span>{{servidor.cidadeEndExt}}</span>
+                </dd>
+                <dt><span>Cod Postal End Ext</span></dt>
+                <dd>
+                    <span>{{servidor.codPostalEndExt}}</span>
+                </dd>
+                <dt><span>Num Rne</span></dt>
+                <dd>
+                    <span>{{servidor.numRne}}</span>
+                </dd>
+                <dt><span>Orgao Emissor RNE</span></dt>
+                <dd>
+                    <span>{{servidor.orgaoEmissorRNE}}</span>
+                </dd>
+                <dt><span>Uf Emissor RNE</span></dt>
+                <dd>
+                    <span>{{servidor.ufEmissorRNE}}</span>
+                </dd>
+                <dt><span>Dat Expe RNE</span></dt>
+                <dd>
+                    <span>{{servidor.datExpeRNE}}</span>
+                </dd>
+                <dt><span>Dat Chegada</span></dt>
+                <dd>
+                    <span>{{servidor.datChegada}}</span>
+                </dd>
+                <dt><span>Class Trab Estr</span></dt>
+                <dd>
+                    <span>{{servidor.classTrabEstr}}</span>
+                </dd>
+                <dt><span>Casado BR</span></dt>
+                <dd>
+                    <span>{{servidor.casadoBR}}</span>
+                </dd>
+                <dt><span>Filhos B Rr</span></dt>
+                <dd>
+                    <span>{{servidor.filhosBRr}}</span>
+                </dd>
+                <dt><span>Aux Transporte</span></dt>
+                <dd>
+                    <span>{{servidor.auxTransporte}}</span>
+                </dd>
+                <dt><span>Aux Trans Linha 1</span></dt>
+                <dd>
+                    <span>{{servidor.auxTransLinha1}}</span>
+                </dd>
+                <dt><span>Aux Trans Linha 2</span></dt>
+                <dd>
+                    <span>{{servidor.auxTransLinha2}}</span>
+                </dd>
+                <dt><span>Aux Trans Linha 3</span></dt>
+                <dd>
+                    <span>{{servidor.auxTransLinha3}}</span>
+                </dd>
+                <dt><span>Aux Trans Linha 4</span></dt>
+                <dd>
+                    <span>{{servidor.auxTransLinha4}}</span>
+                </dd>
+                <dt><span>Trab Aposentado</span></dt>
+                <dd>
+                    <span>{{servidor.trabAposentado}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/servidor', servidor.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+{
+    "name": "ParenteServidor",
+    "fields": [
+        {
+            "fieldName": "fkParenteServidor",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "matriculaParente",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "fkGrauParentesco",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "servidor",
+            "otherEntityName": "servidor",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180621204753",
+    "entityTableName": "parente_servidor",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

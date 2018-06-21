@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-pais-heading">Create or edit a Pais</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!pais.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="pais.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_codPais">Cod Pais</label>
+                    <input type="number" class="form-control" name="codPais" id="field_codPais"
+                        [(ngModel)]="pais.codPais" required/>
+                    <div [hidden]="!(editForm.controls.codPais?.dirty && editForm.controls.codPais?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.codPais?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.codPais?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nomePais">Nome Pais</label>
+                    <input type="text" class="form-control" name="nomePais" id="field_nomePais"
+                        [(ngModel)]="pais.nomePais" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_pais">Pais</label>
+                    <select class="form-control" id="field_pais" name="pais" [(ngModel)]="pais.pais">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="servidorOption.id === pais.pais?.id ? pais.pais : servidorOption" *ngFor="let servidorOption of pais; trackBy: trackServidorById">{{servidorOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

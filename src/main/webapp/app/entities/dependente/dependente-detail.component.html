@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dependente">
+            <h2><span>Dependente</span> {{dependente.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Fk Dependente</span></dt>
+                <dd>
+                    <span>{{dependente.fkDependente}}</span>
+                </dd>
+                <dt><span>Tp Dependente</span></dt>
+                <dd>
+                    <span>{{dependente.tpDependente}}</span>
+                </dd>
+                <dt><span>Nome Depend</span></dt>
+                <dd>
+                    <span>{{dependente.nomeDepend}}</span>
+                </dd>
+                <dt><span>Dat Nac</span></dt>
+                <dd>
+                    <span>{{dependente.datNac}}</span>
+                </dd>
+                <dt><span>Cpf Depend</span></dt>
+                <dd>
+                    <span>{{dependente.cpfDepend}}</span>
+                </dd>
+                <dt><span>Dep IRRF</span></dt>
+                <dd>
+                    <span>{{dependente.depIRRF}}</span>
+                </dd>
+                <dt><span>Dep SF</span></dt>
+                <dd>
+                    <span>{{dependente.depSF}}</span>
+                </dd>
+                <dt><span>Incapac Trab</span></dt>
+                <dd>
+                    <span>{{dependente.incapacTrab}}</span>
+                </dd>
+                <dt><span>Servidor</span></dt>
+                <dd>
+                    <div *ngIf="dependente.servidor">
+                        <a [routerLink]="['/servidor', dependente.servidor?.id, 'view']">{{dependente.servidor?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/dependente', dependente.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

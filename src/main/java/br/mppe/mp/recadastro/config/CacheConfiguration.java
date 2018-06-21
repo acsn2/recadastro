@@ -38,6 +38,21 @@ public class CacheConfiguration {
             cm.createCache(br.mppe.mp.recadastro.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(br.mppe.mp.recadastro.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(br.mppe.mp.recadastro.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(br.mppe.mp.recadastro.domain.Servidor.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mppe.mp.recadastro.domain.Servidor.class.getName() + ".serMatriculas", jcacheConfiguration);
+            cm.createCache(br.mppe.mp.recadastro.domain.Dependente.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mppe.mp.recadastro.domain.ParenteServidor.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mppe.mp.recadastro.domain.EstadoCivil.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mppe.mp.recadastro.domain.Orgao.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mppe.mp.recadastro.domain.ServidorTipo.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mppe.mp.recadastro.domain.Pais.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mppe.mp.recadastro.domain.Cidade.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mppe.mp.recadastro.domain.RacaCor.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mppe.mp.recadastro.domain.Escolaridade.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mppe.mp.recadastro.domain.CategoriaESocial.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mppe.mp.recadastro.domain.RegimeTrabalho.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mppe.mp.recadastro.domain.RegimePrevidenciario.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mppe.mp.recadastro.domain.AnelViario.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

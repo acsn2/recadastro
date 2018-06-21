@@ -1,0 +1,66 @@
+{
+    "name": "Dependente",
+    "fields": [
+        {
+            "fieldName": "fkDependente",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tpDependente",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nomeDepend",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "datNac",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cpfDepend",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "depIRRF",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "depSF",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "incapacTrab",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "servidor",
+            "otherEntityName": "servidor",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180621204752",
+    "entityTableName": "dependente",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

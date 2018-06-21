@@ -1,0 +1,35 @@
+{
+    "name": "AnelViario",
+    "fields": [
+        {
+            "fieldName": "codAnel",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descAnel",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "task",
+            "otherEntityName": "servidor",
+            "otherEntityField": "trabalhoCasa2",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "anelViario"
+        }
+    ],
+    "changelogDate": "20180621204804",
+    "entityTableName": "anel_viario",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
