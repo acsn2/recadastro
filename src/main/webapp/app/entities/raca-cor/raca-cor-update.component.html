@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-raca-cor-heading">Create or edit a Raca Cor</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!racaCor.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="racaCor.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_codRacaCor">Cod Raca Cor</label>
+                    <input type="number" class="form-control" name="codRacaCor" id="field_codRacaCor"
+                        [(ngModel)]="racaCor.codRacaCor" required/>
+                    <div [hidden]="!(editForm.controls.codRacaCor?.dirty && editForm.controls.codRacaCor?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.codRacaCor?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.codRacaCor?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_descRacaCor">Desc Raca Cor</label>
+                    <input type="text" class="form-control" name="descRacaCor" id="field_descRacaCor"
+                        [(ngModel)]="racaCor.descRacaCor" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_racaCor">Raca Cor</label>
+                    <select class="form-control" id="field_racaCor" name="racaCor" [(ngModel)]="racaCor.racaCor">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="servidorOption.id === racaCor.racaCor?.id ? racaCor.racaCor : servidorOption" *ngFor="let servidorOption of racacors; trackBy: trackServidorById">{{servidorOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

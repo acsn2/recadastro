@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="regimePrevidenciario">
+            <h2><span>Regime Previdenciario</span> {{regimePrevidenciario.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Cod Reg Prev</span></dt>
+                <dd>
+                    <span>{{regimePrevidenciario.codRegPrev}}</span>
+                </dd>
+                <dt><span>Desc Reg Prev</span></dt>
+                <dd>
+                    <span>{{regimePrevidenciario.descRegPrev}}</span>
+                </dd>
+                <dt><span>Regime Previdenciario</span></dt>
+                <dd>
+                    <div *ngIf="regimePrevidenciario.regimePrevidenciario">
+                        <a [routerLink]="['/servidor', regimePrevidenciario.regimePrevidenciario?.id, 'view']">{{regimePrevidenciario.regimePrevidenciario?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/regime-previdenciario', regimePrevidenciario.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

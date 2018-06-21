@@ -1,0 +1,108 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-dependente-heading">Create or edit a Dependente</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!dependente.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="dependente.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_fkDependente">Fk Dependente</label>
+                    <input type="number" class="form-control" name="fkDependente" id="field_fkDependente"
+                        [(ngModel)]="dependente.fkDependente" required/>
+                    <div [hidden]="!(editForm.controls.fkDependente?.dirty && editForm.controls.fkDependente?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.fkDependente?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.fkDependente?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tpDependente">Tp Dependente</label>
+                    <input type="number" class="form-control" name="tpDependente" id="field_tpDependente"
+                        [(ngModel)]="dependente.tpDependente" required/>
+                    <div [hidden]="!(editForm.controls.tpDependente?.dirty && editForm.controls.tpDependente?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.tpDependente?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.tpDependente?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nomeDepend">Nome Depend</label>
+                    <input type="text" class="form-control" name="nomeDepend" id="field_nomeDepend"
+                        [(ngModel)]="dependente.nomeDepend" required/>
+                    <div [hidden]="!(editForm.controls.nomeDepend?.dirty && editForm.controls.nomeDepend?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nomeDepend?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_datNac">Dat Nac</label>
+                    <div class="input-group">
+                        <input id="field_datNac" type="text" class="form-control" name="datNac" ngbDatepicker  #datNacDp="ngbDatepicker" [(ngModel)]="dependente.datNac"
+                        required/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datNacDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div [hidden]="!(editForm.controls.datNac?.dirty && editForm.controls.datNac?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.datNac?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cpfDepend">Cpf Depend</label>
+                    <input type="text" class="form-control" name="cpfDepend" id="field_cpfDepend"
+                        [(ngModel)]="dependente.cpfDepend" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_depIRRF">Dep IRRF</label>
+                    <input type="text" class="form-control" name="depIRRF" id="field_depIRRF"
+                        [(ngModel)]="dependente.depIRRF" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_depSF">Dep SF</label>
+                    <input type="text" class="form-control" name="depSF" id="field_depSF"
+                        [(ngModel)]="dependente.depSF" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_incapacTrab">Incapac Trab</label>
+                    <input type="text" class="form-control" name="incapacTrab" id="field_incapacTrab"
+                        [(ngModel)]="dependente.incapacTrab" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_servidor">Servidor</label>
+                    <select class="form-control" id="field_servidor" name="servidor" [(ngModel)]="dependente.servidor" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="servidorOption.id === dependente.servidor?.id ? dependente.servidor : servidorOption" *ngFor="let servidorOption of servidors; trackBy: trackServidorById">{{servidorOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

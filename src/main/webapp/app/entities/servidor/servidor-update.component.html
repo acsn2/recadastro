@@ -1,0 +1,751 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-servidor-heading">Create or edit a Servidor</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!servidor.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="servidor.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_matricula">Matricula</label>
+                    <input type="number" class="form-control" name="matricula" id="field_matricula"
+                        [(ngModel)]="servidor.matricula" required/>
+                    <div [hidden]="!(editForm.controls.matricula?.dirty && editForm.controls.matricula?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.matricula?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.matricula?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_username">Username</label>
+                    <input type="text" class="form-control" name="username" id="field_username"
+                        [(ngModel)]="servidor.username" required/>
+                    <div [hidden]="!(editForm.controls.username?.dirty && editForm.controls.username?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.username?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nomeSocial">Nome Social</label>
+                    <input type="text" class="form-control" name="nomeSocial" id="field_nomeSocial"
+                        [(ngModel)]="servidor.nomeSocial" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_datNascimento">Dat Nascimento</label>
+                    <div class="input-group">
+                        <input id="field_datNascimento" type="text" class="form-control" name="datNascimento" ngbDatepicker  #datNascimentoDp="ngbDatepicker" [(ngModel)]="servidor.datNascimento"
+                        required/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datNascimentoDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div [hidden]="!(editForm.controls.datNascimento?.dirty && editForm.controls.datNascimento?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.datNascimento?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nomePai">Nome Pai</label>
+                    <input type="text" class="form-control" name="nomePai" id="field_nomePai"
+                        [(ngModel)]="servidor.nomePai" required/>
+                    <div [hidden]="!(editForm.controls.nomePai?.dirty && editForm.controls.nomePai?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nomePai?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nomeMae">Nome Mae</label>
+                    <input type="text" class="form-control" name="nomeMae" id="field_nomeMae"
+                        [(ngModel)]="servidor.nomeMae" required/>
+                    <div [hidden]="!(editForm.controls.nomeMae?.dirty && editForm.controls.nomeMae?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nomeMae?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cpf">Cpf</label>
+                    <input type="number" class="form-control" name="cpf" id="field_cpf"
+                        [(ngModel)]="servidor.cpf" required/>
+                    <div [hidden]="!(editForm.controls.cpf?.dirty && editForm.controls.cpf?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.cpf?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.cpf?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cpfPai">Cpf Pai</label>
+                    <input type="number" class="form-control" name="cpfPai" id="field_cpfPai"
+                        [(ngModel)]="servidor.cpfPai" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cpfMae">Cpf Mae</label>
+                    <input type="number" class="form-control" name="cpfMae" id="field_cpfMae"
+                        [(ngModel)]="servidor.cpfMae" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rgNum">Rg Num</label>
+                    <input type="text" class="form-control" name="rgNum" id="field_rgNum"
+                        [(ngModel)]="servidor.rgNum" required/>
+                    <div [hidden]="!(editForm.controls.rgNum?.dirty && editForm.controls.rgNum?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.rgNum?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rgUf">Rg Uf</label>
+                    <input type="text" class="form-control" name="rgUf" id="field_rgUf"
+                        [(ngModel)]="servidor.rgUf" required/>
+                    <div [hidden]="!(editForm.controls.rgUf?.dirty && editForm.controls.rgUf?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.rgUf?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rgOrgaoExp">Rg Orgao Exp</label>
+                    <input type="text" class="form-control" name="rgOrgaoExp" id="field_rgOrgaoExp"
+                        [(ngModel)]="servidor.rgOrgaoExp" required/>
+                    <div [hidden]="!(editForm.controls.rgOrgaoExp?.dirty && editForm.controls.rgOrgaoExp?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.rgOrgaoExp?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rgDataExp">Rg Data Exp</label>
+                    <div class="input-group">
+                        <input id="field_rgDataExp" type="text" class="form-control" name="rgDataExp" ngbDatepicker  #rgDataExpDp="ngbDatepicker" [(ngModel)]="servidor.rgDataExp"
+                        required/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="rgDataExpDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div [hidden]="!(editForm.controls.rgDataExp?.dirty && editForm.controls.rgDataExp?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.rgDataExp?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sexo">Sexo</label>
+                    <input type="text" class="form-control" name="sexo" id="field_sexo"
+                        [(ngModel)]="servidor.sexo" required/>
+                    <div [hidden]="!(editForm.controls.sexo?.dirty && editForm.controls.sexo?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sexo?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tipoSangue">Tipo Sangue</label>
+                    <input type="text" class="form-control" name="tipoSangue" id="field_tipoSangue"
+                        [(ngModel)]="servidor.tipoSangue" required/>
+                    <div [hidden]="!(editForm.controls.tipoSangue?.dirty && editForm.controls.tipoSangue?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.tipoSangue?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_fatorRh">Fator Rh</label>
+                    <input type="text" class="form-control" name="fatorRh" id="field_fatorRh"
+                        [(ngModel)]="servidor.fatorRh" required/>
+                    <div [hidden]="!(editForm.controls.fatorRh?.dirty && editForm.controls.fatorRh?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.fatorRh?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_doadorSangue">Doador Sangue</label>
+                    <input type="text" class="form-control" name="doadorSangue" id="field_doadorSangue"
+                        [(ngModel)]="servidor.doadorSangue" required/>
+                    <div [hidden]="!(editForm.controls.doadorSangue?.dirty && editForm.controls.doadorSangue?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.doadorSangue?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_deficienciaFisica">Deficiencia Fisica</label>
+                    <input type="text" class="form-control" name="deficienciaFisica" id="field_deficienciaFisica"
+                        [(ngModel)]="servidor.deficienciaFisica" required/>
+                    <div [hidden]="!(editForm.controls.deficienciaFisica?.dirty && editForm.controls.deficienciaFisica?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.deficienciaFisica?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_deficienciaVisual">Deficiencia Visual</label>
+                    <input type="text" class="form-control" name="deficienciaVisual" id="field_deficienciaVisual"
+                        [(ngModel)]="servidor.deficienciaVisual" required/>
+                    <div [hidden]="!(editForm.controls.deficienciaVisual?.dirty && editForm.controls.deficienciaVisual?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.deficienciaVisual?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_deficienciaAuditiva">Deficiencia Auditiva</label>
+                    <input type="text" class="form-control" name="deficienciaAuditiva" id="field_deficienciaAuditiva"
+                        [(ngModel)]="servidor.deficienciaAuditiva" required/>
+                    <div [hidden]="!(editForm.controls.deficienciaAuditiva?.dirty && editForm.controls.deficienciaAuditiva?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.deficienciaAuditiva?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_deficienciaMental">Deficiencia Mental</label>
+                    <input type="text" class="form-control" name="deficienciaMental" id="field_deficienciaMental"
+                        [(ngModel)]="servidor.deficienciaMental" required/>
+                    <div [hidden]="!(editForm.controls.deficienciaMental?.dirty && editForm.controls.deficienciaMental?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.deficienciaMental?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_deficienciaIntelec">Deficiencia Intelec</label>
+                    <input type="text" class="form-control" name="deficienciaIntelec" id="field_deficienciaIntelec"
+                        [(ngModel)]="servidor.deficienciaIntelec" required/>
+                    <div [hidden]="!(editForm.controls.deficienciaIntelec?.dirty && editForm.controls.deficienciaIntelec?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.deficienciaIntelec?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_deficReabReadaptado">Defic Reab Readaptado</label>
+                    <input type="text" class="form-control" name="deficReabReadaptado" id="field_deficReabReadaptado"
+                        [(ngModel)]="servidor.deficReabReadaptado" required/>
+                    <div [hidden]="!(editForm.controls.deficReabReadaptado?.dirty && editForm.controls.deficReabReadaptado?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.deficReabReadaptado?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_deficObservacao">Defic Observacao</label>
+                    <input type="text" class="form-control" name="deficObservacao" id="field_deficObservacao"
+                        [(ngModel)]="servidor.deficObservacao" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_preencheCota">Preenche Cota</label>
+                    <input type="text" class="form-control" name="preencheCota" id="field_preencheCota"
+                        [(ngModel)]="servidor.preencheCota" required/>
+                    <div [hidden]="!(editForm.controls.preencheCota?.dirty && editForm.controls.preencheCota?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.preencheCota?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_emailPessoal">Email Pessoal</label>
+                    <input type="text" class="form-control" name="emailPessoal" id="field_emailPessoal"
+                        [(ngModel)]="servidor.emailPessoal" required/>
+                    <div [hidden]="!(editForm.controls.emailPessoal?.dirty && editForm.controls.emailPessoal?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.emailPessoal?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_emailAltern">Email Altern</label>
+                    <input type="text" class="form-control" name="emailAltern" id="field_emailAltern"
+                        [(ngModel)]="servidor.emailAltern" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_celular">Celular</label>
+                    <input type="text" class="form-control" name="celular" id="field_celular"
+                        [(ngModel)]="servidor.celular" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_celularOperadora">Celular Operadora</label>
+                    <input type="text" class="form-control" name="celularOperadora" id="field_celularOperadora"
+                        [(ngModel)]="servidor.celularOperadora" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_pasep">Pasep</label>
+                    <input type="text" class="form-control" name="pasep" id="field_pasep"
+                        [(ngModel)]="servidor.pasep" required/>
+                    <div [hidden]="!(editForm.controls.pasep?.dirty && editForm.controls.pasep?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.pasep?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ipsep">Ipsep</label>
+                    <input type="text" class="form-control" name="ipsep" id="field_ipsep"
+                        [(ngModel)]="servidor.ipsep" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_inss">Inss</label>
+                    <input type="text" class="form-control" name="inss" id="field_inss"
+                        [(ngModel)]="servidor.inss" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ctpsNum">Ctps Num</label>
+                    <input type="text" class="form-control" name="ctpsNum" id="field_ctpsNum"
+                        [(ngModel)]="servidor.ctpsNum" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ctpsSerie">Ctps Serie</label>
+                    <input type="text" class="form-control" name="ctpsSerie" id="field_ctpsSerie"
+                        [(ngModel)]="servidor.ctpsSerie" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ctpsEmissao">Ctps Emissao</label>
+                    <div class="input-group">
+                        <input id="field_ctpsEmissao" type="text" class="form-control" name="ctpsEmissao" ngbDatepicker  #ctpsEmissaoDp="ngbDatepicker" [(ngModel)]="servidor.ctpsEmissao"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="ctpsEmissaoDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ctpsUf">Ctps Uf</label>
+                    <input type="text" class="form-control" name="ctpsUf" id="field_ctpsUf"
+                        [(ngModel)]="servidor.ctpsUf" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orgaoClasseNum">Orgao Classe Num</label>
+                    <input type="text" class="form-control" name="orgaoClasseNum" id="field_orgaoClasseNum"
+                        [(ngModel)]="servidor.orgaoClasseNum" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orgaoClNome">Orgao Cl Nome</label>
+                    <input type="text" class="form-control" name="orgaoClNome" id="field_orgaoClNome"
+                        [(ngModel)]="servidor.orgaoClNome" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orgaoClUf">Orgao Cl Uf</label>
+                    <input type="text" class="form-control" name="orgaoClUf" id="field_orgaoClUf"
+                        [(ngModel)]="servidor.orgaoClUf" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orclDtaExp">Orcl Dta Exp</label>
+                    <div class="input-group">
+                        <input id="field_orclDtaExp" type="text" class="form-control" name="orclDtaExp" ngbDatepicker  #orclDtaExpDp="ngbDatepicker" [(ngModel)]="servidor.orclDtaExp"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="orclDtaExpDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orclDtaValid">Orcl Dta Valid</label>
+                    <div class="input-group">
+                        <input id="field_orclDtaValid" type="text" class="form-control" name="orclDtaValid" ngbDatepicker  #orclDtaValidDp="ngbDatepicker" [(ngModel)]="servidor.orclDtaValid"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="orclDtaValidDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_reservista">Reservista</label>
+                    <input type="text" class="form-control" name="reservista" id="field_reservista"
+                        [(ngModel)]="servidor.reservista" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_reservistaClasse">Reservista Classe</label>
+                    <input type="text" class="form-control" name="reservistaClasse" id="field_reservistaClasse"
+                        [(ngModel)]="servidor.reservistaClasse" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_numRIC">Num RIC</label>
+                    <input type="text" class="form-control" name="numRIC" id="field_numRIC"
+                        [(ngModel)]="servidor.numRIC" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orgaoEmissorRIC">Orgao Emissor RIC</label>
+                    <input type="text" class="form-control" name="orgaoEmissorRIC" id="field_orgaoEmissorRIC"
+                        [(ngModel)]="servidor.orgaoEmissorRIC" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ufRIC">Uf RIC</label>
+                    <input type="text" class="form-control" name="ufRIC" id="field_ufRIC"
+                        [(ngModel)]="servidor.ufRIC" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_datExpedRIC">Dat Exped RIC</label>
+                    <div class="input-group">
+                        <input id="field_datExpedRIC" type="text" class="form-control" name="datExpedRIC" ngbDatepicker  #datExpedRICDp="ngbDatepicker" [(ngModel)]="servidor.datExpedRIC"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datExpedRICDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_titEleitorNum">Tit Eleitor Num</label>
+                    <input type="text" class="form-control" name="titEleitorNum" id="field_titEleitorNum"
+                        [(ngModel)]="servidor.titEleitorNum" required/>
+                    <div [hidden]="!(editForm.controls.titEleitorNum?.dirty && editForm.controls.titEleitorNum?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.titEleitorNum?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_titEleitorZona">Tit Eleitor Zona</label>
+                    <input type="text" class="form-control" name="titEleitorZona" id="field_titEleitorZona"
+                        [(ngModel)]="servidor.titEleitorZona" required/>
+                    <div [hidden]="!(editForm.controls.titEleitorZona?.dirty && editForm.controls.titEleitorZona?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.titEleitorZona?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_titEleitorSecao">Tit Eleitor Secao</label>
+                    <input type="text" class="form-control" name="titEleitorSecao" id="field_titEleitorSecao"
+                        [(ngModel)]="servidor.titEleitorSecao" required/>
+                    <div [hidden]="!(editForm.controls.titEleitorSecao?.dirty && editForm.controls.titEleitorSecao?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.titEleitorSecao?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_titEleitorLocal">Tit Eleitor Local</label>
+                    <input type="text" class="form-control" name="titEleitorLocal" id="field_titEleitorLocal"
+                        [(ngModel)]="servidor.titEleitorLocal" required/>
+                    <div [hidden]="!(editForm.controls.titEleitorLocal?.dirty && editForm.controls.titEleitorLocal?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.titEleitorLocal?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cnhNum">Cnh Num</label>
+                    <input type="text" class="form-control" name="cnhNum" id="field_cnhNum"
+                        [(ngModel)]="servidor.cnhNum" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cnhCategoria">Cnh Categoria</label>
+                    <input type="text" class="form-control" name="cnhCategoria" id="field_cnhCategoria"
+                        [(ngModel)]="servidor.cnhCategoria" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cnhDatValidade">Cnh Dat Validade</label>
+                    <div class="input-group">
+                        <input id="field_cnhDatValidade" type="text" class="form-control" name="cnhDatValidade" ngbDatepicker  #cnhDatValidadeDp="ngbDatepicker" [(ngModel)]="servidor.cnhDatValidade"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="cnhDatValidadeDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cnhDatExped">Cnh Dat Exped</label>
+                    <div class="input-group">
+                        <input id="field_cnhDatExped" type="text" class="form-control" name="cnhDatExped" ngbDatepicker  #cnhDatExpedDp="ngbDatepicker" [(ngModel)]="servidor.cnhDatExped"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="cnhDatExpedDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cnhUfEmissor">Cnh Uf Emissor</label>
+                    <input type="text" class="form-control" name="cnhUfEmissor" id="field_cnhUfEmissor"
+                        [(ngModel)]="servidor.cnhUfEmissor" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cnhDatPrimHab">Cnh Dat Prim Hab</label>
+                    <div class="input-group">
+                        <input id="field_cnhDatPrimHab" type="text" class="form-control" name="cnhDatPrimHab" ngbDatepicker  #cnhDatPrimHabDp="ngbDatepicker" [(ngModel)]="servidor.cnhDatPrimHab"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="cnhDatPrimHabDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sassepeNum">Sassepe Num</label>
+                    <input type="text" class="form-control" name="sassepeNum" id="field_sassepeNum"
+                        [(ngModel)]="servidor.sassepeNum" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ufNatural">Uf Natural</label>
+                    <input type="text" class="form-control" name="ufNatural" id="field_ufNatural"
+                        [(ngModel)]="servidor.ufNatural" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_primEmprego">Prim Emprego</label>
+                    <input type="text" class="form-control" name="primEmprego" id="field_primEmprego"
+                        [(ngModel)]="servidor.primEmprego" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_exercMagisterio">Exerc Magisterio</label>
+                    <input type="text" class="form-control" name="exercMagisterio" id="field_exercMagisterio"
+                        [(ngModel)]="servidor.exercMagisterio" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tipoLogradouro" ngbTooltip="1- Regime Geral da Previdência Social - RGPS
+2- Regime Próprio de Previdência Social - RPPS
+3- Regime de Previdência Social no Exterior">Tipo Logradouro</label>
+                    <input type="number" class="form-control" name="tipoLogradouro" id="field_tipoLogradouro"
+                        [(ngModel)]="servidor.tipoLogradouro" required/>
+                    <div [hidden]="!(editForm.controls.tipoLogradouro?.dirty && editForm.controls.tipoLogradouro?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.tipoLogradouro?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.tipoLogradouro?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_descLogradouro">Desc Logradouro</label>
+                    <input type="text" class="form-control" name="descLogradouro" id="field_descLogradouro"
+                        [(ngModel)]="servidor.descLogradouro" required/>
+                    <div [hidden]="!(editForm.controls.descLogradouro?.dirty && editForm.controls.descLogradouro?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.descLogradouro?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nrEndereco">Nr Endereco</label>
+                    <input type="text" class="form-control" name="nrEndereco" id="field_nrEndereco"
+                        [(ngModel)]="servidor.nrEndereco" required/>
+                    <div [hidden]="!(editForm.controls.nrEndereco?.dirty && editForm.controls.nrEndereco?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nrEndereco?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_complEndereco">Compl Endereco</label>
+                    <input type="text" class="form-control" name="complEndereco" id="field_complEndereco"
+                        [(ngModel)]="servidor.complEndereco" required/>
+                    <div [hidden]="!(editForm.controls.complEndereco?.dirty && editForm.controls.complEndereco?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.complEndereco?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bairroEndereco">Bairro Endereco</label>
+                    <input type="text" class="form-control" name="bairroEndereco" id="field_bairroEndereco"
+                        [(ngModel)]="servidor.bairroEndereco" required/>
+                    <div [hidden]="!(editForm.controls.bairroEndereco?.dirty && editForm.controls.bairroEndereco?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.bairroEndereco?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cepEndereco">Cep Endereco</label>
+                    <input type="number" class="form-control" name="cepEndereco" id="field_cepEndereco"
+                        [(ngModel)]="servidor.cepEndereco" required/>
+                    <div [hidden]="!(editForm.controls.cepEndereco?.dirty && editForm.controls.cepEndereco?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.cepEndereco?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.cepEndereco?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ufEndereco">Uf Endereco</label>
+                    <input type="text" class="form-control" name="ufEndereco" id="field_ufEndereco"
+                        [(ngModel)]="servidor.ufEndereco" required/>
+                    <div [hidden]="!(editForm.controls.ufEndereco?.dirty && editForm.controls.ufEndereco?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.ufEndereco?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_telefone1">Telefone 1</label>
+                    <input type="text" class="form-control" name="telefone1" id="field_telefone1"
+                        [(ngModel)]="servidor.telefone1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_telefone2">Telefone 2</label>
+                    <input type="text" class="form-control" name="telefone2" id="field_telefone2"
+                        [(ngModel)]="servidor.telefone2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_descLograExt">Desc Logra Ext</label>
+                    <input type="text" class="form-control" name="descLograExt" id="field_descLograExt"
+                        [(ngModel)]="servidor.descLograExt" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nrLograExt">Nr Logra Ext</label>
+                    <input type="text" class="form-control" name="nrLograExt" id="field_nrLograExt"
+                        [(ngModel)]="servidor.nrLograExt" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_complLograExt">Compl Logra Ext</label>
+                    <input type="text" class="form-control" name="complLograExt" id="field_complLograExt"
+                        [(ngModel)]="servidor.complLograExt" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bairroEndExt">Bairro End Ext</label>
+                    <input type="text" class="form-control" name="bairroEndExt" id="field_bairroEndExt"
+                        [(ngModel)]="servidor.bairroEndExt" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cidadeEndExt">Cidade End Ext</label>
+                    <input type="text" class="form-control" name="cidadeEndExt" id="field_cidadeEndExt"
+                        [(ngModel)]="servidor.cidadeEndExt" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_codPostalEndExt">Cod Postal End Ext</label>
+                    <input type="text" class="form-control" name="codPostalEndExt" id="field_codPostalEndExt"
+                        [(ngModel)]="servidor.codPostalEndExt" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_numRne">Num Rne</label>
+                    <input type="text" class="form-control" name="numRne" id="field_numRne"
+                        [(ngModel)]="servidor.numRne" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orgaoEmissorRNE">Orgao Emissor RNE</label>
+                    <input type="text" class="form-control" name="orgaoEmissorRNE" id="field_orgaoEmissorRNE"
+                        [(ngModel)]="servidor.orgaoEmissorRNE" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ufEmissorRNE">Uf Emissor RNE</label>
+                    <input type="text" class="form-control" name="ufEmissorRNE" id="field_ufEmissorRNE"
+                        [(ngModel)]="servidor.ufEmissorRNE" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_datExpeRNE">Dat Expe RNE</label>
+                    <div class="input-group">
+                        <input id="field_datExpeRNE" type="text" class="form-control" name="datExpeRNE" ngbDatepicker  #datExpeRNEDp="ngbDatepicker" [(ngModel)]="servidor.datExpeRNE"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datExpeRNEDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_datChegada">Dat Chegada</label>
+                    <div class="input-group">
+                        <input id="field_datChegada" type="text" class="form-control" name="datChegada" ngbDatepicker  #datChegadaDp="ngbDatepicker" [(ngModel)]="servidor.datChegada"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datChegadaDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_classTrabEstr">Class Trab Estr</label>
+                    <input type="number" class="form-control" name="classTrabEstr" id="field_classTrabEstr"
+                        [(ngModel)]="servidor.classTrabEstr" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_casadoBR">Casado BR</label>
+                    <input type="text" class="form-control" name="casadoBR" id="field_casadoBR"
+                        [(ngModel)]="servidor.casadoBR" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_filhosBRr">Filhos B Rr</label>
+                    <input type="text" class="form-control" name="filhosBRr" id="field_filhosBRr"
+                        [(ngModel)]="servidor.filhosBRr" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_auxTransporte">Aux Transporte</label>
+                    <input type="text" class="form-control" name="auxTransporte" id="field_auxTransporte"
+                        [(ngModel)]="servidor.auxTransporte" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_auxTransLinha1">Aux Trans Linha 1</label>
+                    <input type="text" class="form-control" name="auxTransLinha1" id="field_auxTransLinha1"
+                        [(ngModel)]="servidor.auxTransLinha1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_auxTransLinha2">Aux Trans Linha 2</label>
+                    <input type="text" class="form-control" name="auxTransLinha2" id="field_auxTransLinha2"
+                        [(ngModel)]="servidor.auxTransLinha2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_auxTransLinha3">Aux Trans Linha 3</label>
+                    <input type="text" class="form-control" name="auxTransLinha3" id="field_auxTransLinha3"
+                        [(ngModel)]="servidor.auxTransLinha3" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_auxTransLinha4">Aux Trans Linha 4</label>
+                    <input type="text" class="form-control" name="auxTransLinha4" id="field_auxTransLinha4"
+                        [(ngModel)]="servidor.auxTransLinha4" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_trabAposentado">Trab Aposentado</label>
+                    <input type="text" class="form-control" name="trabAposentado" id="field_trabAposentado"
+                        [(ngModel)]="servidor.trabAposentado" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

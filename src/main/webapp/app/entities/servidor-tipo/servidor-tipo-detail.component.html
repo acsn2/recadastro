@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="servidorTipo">
+            <h2><span>Servidor Tipo</span> {{servidorTipo.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Numero</span></dt>
+                <dd>
+                    <span>{{servidorTipo.numero}}</span>
+                </dd>
+                <dt><span>Nome</span></dt>
+                <dd>
+                    <span>{{servidorTipo.nome}}</span>
+                </dd>
+                <dt><span>Indicativo</span></dt>
+                <dd>
+                    <span>{{servidorTipo.indicativo}}</span>
+                </dd>
+                <dt><span>Servidor Tipo</span></dt>
+                <dd>
+                    <div *ngIf="servidorTipo.servidorTipo">
+                        <a [routerLink]="['/servidor', servidorTipo.servidorTipo?.id, 'view']">{{servidorTipo.servidorTipo?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/servidor-tipo', servidorTipo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

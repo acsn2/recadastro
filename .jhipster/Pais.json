@@ -1,0 +1,35 @@
+{
+    "name": "Pais",
+    "fields": [
+        {
+            "fieldName": "codPais",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nomePais",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "pais",
+            "otherEntityName": "servidor",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "pais"
+        }
+    ],
+    "changelogDate": "20180621204757",
+    "entityTableName": "pais",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

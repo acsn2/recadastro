@@ -1,0 +1,247 @@
+<div>
+    <h2 id="page-heading">
+        <span>Servidors</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-servidor" [routerLink]="['/servidor/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down" >
+            Create new Servidor
+            </span>
+        </button>
+    </h2>
+    <-alert></-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Query">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="servidors">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Matricula</span></th>
+            <th><span>Username</span></th>
+            <th><span>Nome Social</span></th>
+            <th><span>Dat Nascimento</span></th>
+            <th><span>Nome Pai</span></th>
+            <th><span>Nome Mae</span></th>
+            <th><span>Cpf</span></th>
+            <th><span>Cpf Pai</span></th>
+            <th><span>Cpf Mae</span></th>
+            <th><span>Rg Num</span></th>
+            <th><span>Rg Uf</span></th>
+            <th><span>Rg Orgao Exp</span></th>
+            <th><span>Rg Data Exp</span></th>
+            <th><span>Sexo</span></th>
+            <th><span>Tipo Sangue</span></th>
+            <th><span>Fator Rh</span></th>
+            <th><span>Doador Sangue</span></th>
+            <th><span>Deficiencia Fisica</span></th>
+            <th><span>Deficiencia Visual</span></th>
+            <th><span>Deficiencia Auditiva</span></th>
+            <th><span>Deficiencia Mental</span></th>
+            <th><span>Deficiencia Intelec</span></th>
+            <th><span>Defic Reab Readaptado</span></th>
+            <th><span>Defic Observacao</span></th>
+            <th><span>Preenche Cota</span></th>
+            <th><span>Email Pessoal</span></th>
+            <th><span>Email Altern</span></th>
+            <th><span>Celular</span></th>
+            <th><span>Celular Operadora</span></th>
+            <th><span>Pasep</span></th>
+            <th><span>Ipsep</span></th>
+            <th><span>Inss</span></th>
+            <th><span>Ctps Num</span></th>
+            <th><span>Ctps Serie</span></th>
+            <th><span>Ctps Emissao</span></th>
+            <th><span>Ctps Uf</span></th>
+            <th><span>Orgao Classe Num</span></th>
+            <th><span>Orgao Cl Nome</span></th>
+            <th><span>Orgao Cl Uf</span></th>
+            <th><span>Orcl Dta Exp</span></th>
+            <th><span>Orcl Dta Valid</span></th>
+            <th><span>Reservista</span></th>
+            <th><span>Reservista Classe</span></th>
+            <th><span>Num RIC</span></th>
+            <th><span>Orgao Emissor RIC</span></th>
+            <th><span>Uf RIC</span></th>
+            <th><span>Dat Exped RIC</span></th>
+            <th><span>Tit Eleitor Num</span></th>
+            <th><span>Tit Eleitor Zona</span></th>
+            <th><span>Tit Eleitor Secao</span></th>
+            <th><span>Tit Eleitor Local</span></th>
+            <th><span>Cnh Num</span></th>
+            <th><span>Cnh Categoria</span></th>
+            <th><span>Cnh Dat Validade</span></th>
+            <th><span>Cnh Dat Exped</span></th>
+            <th><span>Cnh Uf Emissor</span></th>
+            <th><span>Cnh Dat Prim Hab</span></th>
+            <th><span>Sassepe Num</span></th>
+            <th><span>Uf Natural</span></th>
+            <th><span>Prim Emprego</span></th>
+            <th><span>Exerc Magisterio</span></th>
+            <th><span>Tipo Logradouro</span></th>
+            <th><span>Desc Logradouro</span></th>
+            <th><span>Nr Endereco</span></th>
+            <th><span>Compl Endereco</span></th>
+            <th><span>Bairro Endereco</span></th>
+            <th><span>Cep Endereco</span></th>
+            <th><span>Uf Endereco</span></th>
+            <th><span>Telefone 1</span></th>
+            <th><span>Telefone 2</span></th>
+            <th><span>Desc Logra Ext</span></th>
+            <th><span>Nr Logra Ext</span></th>
+            <th><span>Compl Logra Ext</span></th>
+            <th><span>Bairro End Ext</span></th>
+            <th><span>Cidade End Ext</span></th>
+            <th><span>Cod Postal End Ext</span></th>
+            <th><span>Num Rne</span></th>
+            <th><span>Orgao Emissor RNE</span></th>
+            <th><span>Uf Emissor RNE</span></th>
+            <th><span>Dat Expe RNE</span></th>
+            <th><span>Dat Chegada</span></th>
+            <th><span>Class Trab Estr</span></th>
+            <th><span>Casado BR</span></th>
+            <th><span>Filhos B Rr</span></th>
+            <th><span>Aux Transporte</span></th>
+            <th><span>Aux Trans Linha 1</span></th>
+            <th><span>Aux Trans Linha 2</span></th>
+            <th><span>Aux Trans Linha 3</span></th>
+            <th><span>Aux Trans Linha 4</span></th>
+            <th><span>Trab Aposentado</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let servidor of servidors ;trackBy: trackId">
+                <td><a [routerLink]="['/servidor', servidor.id, 'view' ]">{{servidor.id}}</a></td>
+                <td>{{servidor.matricula}}</td>
+                <td>{{servidor.username}}</td>
+                <td>{{servidor.nomeSocial}}</td>
+                <td>{{servidor.datNascimento | date:'mediumDate'}}</td>
+                <td>{{servidor.nomePai}}</td>
+                <td>{{servidor.nomeMae}}</td>
+                <td>{{servidor.cpf}}</td>
+                <td>{{servidor.cpfPai}}</td>
+                <td>{{servidor.cpfMae}}</td>
+                <td>{{servidor.rgNum}}</td>
+                <td>{{servidor.rgUf}}</td>
+                <td>{{servidor.rgOrgaoExp}}</td>
+                <td>{{servidor.rgDataExp | date:'mediumDate'}}</td>
+                <td>{{servidor.sexo}}</td>
+                <td>{{servidor.tipoSangue}}</td>
+                <td>{{servidor.fatorRh}}</td>
+                <td>{{servidor.doadorSangue}}</td>
+                <td>{{servidor.deficienciaFisica}}</td>
+                <td>{{servidor.deficienciaVisual}}</td>
+                <td>{{servidor.deficienciaAuditiva}}</td>
+                <td>{{servidor.deficienciaMental}}</td>
+                <td>{{servidor.deficienciaIntelec}}</td>
+                <td>{{servidor.deficReabReadaptado}}</td>
+                <td>{{servidor.deficObservacao}}</td>
+                <td>{{servidor.preencheCota}}</td>
+                <td>{{servidor.emailPessoal}}</td>
+                <td>{{servidor.emailAltern}}</td>
+                <td>{{servidor.celular}}</td>
+                <td>{{servidor.celularOperadora}}</td>
+                <td>{{servidor.pasep}}</td>
+                <td>{{servidor.ipsep}}</td>
+                <td>{{servidor.inss}}</td>
+                <td>{{servidor.ctpsNum}}</td>
+                <td>{{servidor.ctpsSerie}}</td>
+                <td>{{servidor.ctpsEmissao | date:'mediumDate'}}</td>
+                <td>{{servidor.ctpsUf}}</td>
+                <td>{{servidor.orgaoClasseNum}}</td>
+                <td>{{servidor.orgaoClNome}}</td>
+                <td>{{servidor.orgaoClUf}}</td>
+                <td>{{servidor.orclDtaExp | date:'mediumDate'}}</td>
+                <td>{{servidor.orclDtaValid | date:'mediumDate'}}</td>
+                <td>{{servidor.reservista}}</td>
+                <td>{{servidor.reservistaClasse}}</td>
+                <td>{{servidor.numRIC}}</td>
+                <td>{{servidor.orgaoEmissorRIC}}</td>
+                <td>{{servidor.ufRIC}}</td>
+                <td>{{servidor.datExpedRIC | date:'mediumDate'}}</td>
+                <td>{{servidor.titEleitorNum}}</td>
+                <td>{{servidor.titEleitorZona}}</td>
+                <td>{{servidor.titEleitorSecao}}</td>
+                <td>{{servidor.titEleitorLocal}}</td>
+                <td>{{servidor.cnhNum}}</td>
+                <td>{{servidor.cnhCategoria}}</td>
+                <td>{{servidor.cnhDatValidade | date:'mediumDate'}}</td>
+                <td>{{servidor.cnhDatExped | date:'mediumDate'}}</td>
+                <td>{{servidor.cnhUfEmissor}}</td>
+                <td>{{servidor.cnhDatPrimHab | date:'mediumDate'}}</td>
+                <td>{{servidor.sassepeNum}}</td>
+                <td>{{servidor.ufNatural}}</td>
+                <td>{{servidor.primEmprego}}</td>
+                <td>{{servidor.exercMagisterio}}</td>
+                <td>{{servidor.tipoLogradouro}}</td>
+                <td>{{servidor.descLogradouro}}</td>
+                <td>{{servidor.nrEndereco}}</td>
+                <td>{{servidor.complEndereco}}</td>
+                <td>{{servidor.bairroEndereco}}</td>
+                <td>{{servidor.cepEndereco}}</td>
+                <td>{{servidor.ufEndereco}}</td>
+                <td>{{servidor.telefone1}}</td>
+                <td>{{servidor.telefone2}}</td>
+                <td>{{servidor.descLograExt}}</td>
+                <td>{{servidor.nrLograExt}}</td>
+                <td>{{servidor.complLograExt}}</td>
+                <td>{{servidor.bairroEndExt}}</td>
+                <td>{{servidor.cidadeEndExt}}</td>
+                <td>{{servidor.codPostalEndExt}}</td>
+                <td>{{servidor.numRne}}</td>
+                <td>{{servidor.orgaoEmissorRNE}}</td>
+                <td>{{servidor.ufEmissorRNE}}</td>
+                <td>{{servidor.datExpeRNE | date:'mediumDate'}}</td>
+                <td>{{servidor.datChegada | date:'mediumDate'}}</td>
+                <td>{{servidor.classTrabEstr}}</td>
+                <td>{{servidor.casadoBR}}</td>
+                <td>{{servidor.filhosBRr}}</td>
+                <td>{{servidor.auxTransporte}}</td>
+                <td>{{servidor.auxTransLinha1}}</td>
+                <td>{{servidor.auxTransLinha2}}</td>
+                <td>{{servidor.auxTransLinha3}}</td>
+                <td>{{servidor.auxTransLinha4}}</td>
+                <td>{{servidor.trabAposentado}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/servidor', servidor.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/servidor', servidor.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'servidor/'+ servidor.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

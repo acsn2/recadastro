@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="parenteServidor">
+            <h2><span>Parente Servidor</span> {{parenteServidor.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Fk Parente Servidor</span></dt>
+                <dd>
+                    <span>{{parenteServidor.fkParenteServidor}}</span>
+                </dd>
+                <dt><span>Matricula Parente</span></dt>
+                <dd>
+                    <span>{{parenteServidor.matriculaParente}}</span>
+                </dd>
+                <dt><span>Fk Grau Parentesco</span></dt>
+                <dd>
+                    <span>{{parenteServidor.fkGrauParentesco}}</span>
+                </dd>
+                <dt><span>Servidor</span></dt>
+                <dd>
+                    <div *ngIf="parenteServidor.servidor">
+                        <a [routerLink]="['/servidor', parenteServidor.servidor?.id, 'view']">{{parenteServidor.servidor?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/parente-servidor', parenteServidor.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

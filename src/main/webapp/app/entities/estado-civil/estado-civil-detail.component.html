@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="estadoCivil">
+            <h2><span>Estado Civil</span> {{estadoCivil.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Num Est Civil</span></dt>
+                <dd>
+                    <span>{{estadoCivil.numEstCivil}}</span>
+                </dd>
+                <dt><span>Desc Est Civil</span></dt>
+                <dd>
+                    <span>{{estadoCivil.descEstCivil}}</span>
+                </dd>
+                <dt><span>Estado Civil</span></dt>
+                <dd>
+                    <div *ngIf="estadoCivil.estadoCivil">
+                        <a [routerLink]="['/servidor', estadoCivil.estadoCivil?.id, 'view']">{{estadoCivil.estadoCivil?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/estado-civil', estadoCivil.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

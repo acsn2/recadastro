@@ -1,0 +1,39 @@
+{
+    "name": "CategoriaESocial",
+    "fields": [
+        {
+            "fieldName": "codCategoria",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descCategoria",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "grupoCat",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "categoriaESocial",
+            "otherEntityName": "servidor",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "categoriaESocial"
+        }
+    ],
+    "changelogDate": "20180621204801",
+    "entityTableName": "categoria_e_social",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

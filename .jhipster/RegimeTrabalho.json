@@ -1,0 +1,35 @@
+{
+    "name": "RegimeTrabalho",
+    "fields": [
+        {
+            "fieldName": "codRegTrab",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descRegTrab",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "regimeTrabalho",
+            "otherEntityName": "servidor",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "regimeTrabalho"
+        }
+    ],
+    "changelogDate": "20180621204802",
+    "entityTableName": "regime_trabalho",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

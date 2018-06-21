@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="anelViario">
+            <h2><span>Anel Viario</span> {{anelViario.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Cod Anel</span></dt>
+                <dd>
+                    <span>{{anelViario.codAnel}}</span>
+                </dd>
+                <dt><span>Desc Anel</span></dt>
+                <dd>
+                    <span>{{anelViario.descAnel}}</span>
+                </dd>
+                <dt><span>Task</span></dt>
+                <dd>
+                    <div *ngIf="anelViario.task">
+                        <a [routerLink]="['/servidor', anelViario.task?.id, 'view']">{{anelViario.task?.trabalhoCasa2}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/anel-viario', anelViario.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

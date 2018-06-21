@@ -1,0 +1,89 @@
+<div>
+    <h2 id="page-heading">
+        <span>Dependentes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-dependente" [routerLink]="['/dependente/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down" >
+            Create new Dependente
+            </span>
+        </button>
+    </h2>
+    <-alert></-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Query">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="dependentes">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Fk Dependente</span></th>
+            <th><span>Tp Dependente</span></th>
+            <th><span>Nome Depend</span></th>
+            <th><span>Dat Nac</span></th>
+            <th><span>Cpf Depend</span></th>
+            <th><span>Dep IRRF</span></th>
+            <th><span>Dep SF</span></th>
+            <th><span>Incapac Trab</span></th>
+            <th><span>Servidor</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let dependente of dependentes ;trackBy: trackId">
+                <td><a [routerLink]="['/dependente', dependente.id, 'view' ]">{{dependente.id}}</a></td>
+                <td>{{dependente.fkDependente}}</td>
+                <td>{{dependente.tpDependente}}</td>
+                <td>{{dependente.nomeDepend}}</td>
+                <td>{{dependente.datNac | date:'mediumDate'}}</td>
+                <td>{{dependente.cpfDepend}}</td>
+                <td>{{dependente.depIRRF}}</td>
+                <td>{{dependente.depSF}}</td>
+                <td>{{dependente.incapacTrab}}</td>
+                <td>
+                    <div *ngIf="dependente.servidor">
+                        <a [routerLink]="['../servidor', dependente.servidor?.id, 'view' ]" >{{dependente.servidor?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/dependente', dependente.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/dependente', dependente.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'dependente/'+ dependente.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

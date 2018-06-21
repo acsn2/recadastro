@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="categoriaESocial">
+            <h2><span>Categoria E Social</span> {{categoriaESocial.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Cod Categoria</span></dt>
+                <dd>
+                    <span>{{categoriaESocial.codCategoria}}</span>
+                </dd>
+                <dt><span>Desc Categoria</span></dt>
+                <dd>
+                    <span>{{categoriaESocial.descCategoria}}</span>
+                </dd>
+                <dt><span>Grupo Cat</span></dt>
+                <dd>
+                    <span>{{categoriaESocial.grupoCat}}</span>
+                </dd>
+                <dt><span>Categoria E Social</span></dt>
+                <dd>
+                    <div *ngIf="categoriaESocial.categoriaESocial">
+                        <a [routerLink]="['/servidor', categoriaESocial.categoriaESocial?.id, 'view']">{{categoriaESocial.categoriaESocial?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/categoria-e-social', categoriaESocial.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

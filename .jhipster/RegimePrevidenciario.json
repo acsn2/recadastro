@@ -1,0 +1,35 @@
+{
+    "name": "RegimePrevidenciario",
+    "fields": [
+        {
+            "fieldName": "codRegPrev",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descRegPrev",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "regimePrevidenciario",
+            "otherEntityName": "servidor",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "regimePrevidenciario"
+        }
+    ],
+    "changelogDate": "20180621204803",
+    "entityTableName": "regime_previdenciario",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -5,6 +5,33 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204751_added_entity_Servidor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204752_added_entity_Dependente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204753_added_entity_ParenteServidor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204754_added_entity_EstadoCivil.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204755_added_entity_Orgao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204756_added_entity_ServidorTipo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204757_added_entity_Pais.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204758_added_entity_Cidade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204759_added_entity_RacaCor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204800_added_entity_Escolaridade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204801_added_entity_CategoriaESocial.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204802_added_entity_RegimeTrabalho.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204803_added_entity_RegimePrevidenciario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204804_added_entity_AnelViario.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180621204752_added_entity_constraints_Dependente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204753_added_entity_constraints_ParenteServidor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204754_added_entity_constraints_EstadoCivil.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204755_added_entity_constraints_Orgao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204756_added_entity_constraints_ServidorTipo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204757_added_entity_constraints_Pais.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204758_added_entity_constraints_Cidade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204759_added_entity_constraints_RacaCor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204800_added_entity_constraints_Escolaridade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204801_added_entity_constraints_CategoriaESocial.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204802_added_entity_constraints_RegimeTrabalho.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204803_added_entity_constraints_RegimePrevidenciario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180621204804_added_entity_constraints_AnelViario.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

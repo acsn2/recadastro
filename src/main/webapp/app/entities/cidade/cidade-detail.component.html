@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cidade">
+            <h2><span>Cidade</span> {{cidade.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Cod Cidade</span></dt>
+                <dd>
+                    <span>{{cidade.codCidade}}</span>
+                </dd>
+                <dt><span>Nome Cidade</span></dt>
+                <dd>
+                    <span>{{cidade.nomeCidade}}</span>
+                </dd>
+                <dt><span>Cidade</span></dt>
+                <dd>
+                    <div *ngIf="cidade.cidade">
+                        <a [routerLink]="['/servidor', cidade.cidade?.id, 'view']">{{cidade.cidade?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cidade', cidade.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

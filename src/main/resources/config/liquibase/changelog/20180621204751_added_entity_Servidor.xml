@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Servidor.
+    -->
+    <changeSet id="20180621204751-1" author="jhipster">
+        <createTable tableName="servidor">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="matricula" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="username" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="nome_social" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dat_nascimento" type="date">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="nome_pai" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="nome_mae" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="cpf" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="cpf_pai" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cpf_mae" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="rg_num" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="rg_uf" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="rg_orgao_exp" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="rg_data_exp" type="date">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="sexo" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="tipo_sangue" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="fator_rh" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="doador_sangue" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="deficiencia_fisica" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="deficiencia_visual" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="deficiencia_auditiva" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="deficiencia_mental" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="deficiencia_intelec" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="defic_reab_readaptado" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="defic_observacao" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="preenche_cota" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="email_pessoal" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="email_altern" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="celular" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="celular_operadora" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pasep" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="ipsep" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="inss" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ctps_num" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ctps_serie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ctps_emissao" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ctps_uf" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="orgao_classe_num" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="orgao_cl_nome" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="orgao_cl_uf" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="orcl_dta_exp" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="orcl_dta_valid" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="reservista" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="reservista_classe" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="num_ric" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="orgao_emissor_ric" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="uf_ric" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dat_exped_ric" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tit_eleitor_num" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="tit_eleitor_zona" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="tit_eleitor_secao" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="tit_eleitor_local" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="cnh_num" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cnh_categoria" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cnh_dat_validade" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cnh_dat_exped" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cnh_uf_emissor" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cnh_dat_prim_hab" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="sassepe_num" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="uf_natural" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="prim_emprego" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="exerc_magisterio" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tipo_logradouro" type="integer" remarks="1- Regime Geral da Previdência Social - RGPS 2- Regime Próprio de Previdência Social - RPPS 3- Regime de Previdência Social no Exterior">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="desc_logradouro" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="nr_endereco" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="compl_endereco" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="bairro_endereco" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="cep_endereco" type="integer">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="uf_endereco" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="telefone_1" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="telefone_2" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="desc_logra_ext" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nr_logra_ext" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="compl_logra_ext" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="bairro_end_ext" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cidade_end_ext" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cod_postal_end_ext" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="num_rne" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="orgao_emissor_rne" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="uf_emissor_rne" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dat_expe_rne" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dat_chegada" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="class_trab_estr" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="casado_br" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="filhos_b_rr" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="aux_transporte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="aux_trans_linha_1" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="aux_trans_linha_2" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="aux_trans_linha_3" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="aux_trans_linha_4" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="trab_aposentado" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

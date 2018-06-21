@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="orgao">
+            <h2><span>Orgao</span> {{orgao.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Num Orgao</span></dt>
+                <dd>
+                    <span>{{orgao.numOrgao}}</span>
+                </dd>
+                <dt><span>Desc Orgao</span></dt>
+                <dd>
+                    <span>{{orgao.descOrgao}}</span>
+                </dd>
+                <dt><span>Orgao</span></dt>
+                <dd>
+                    <div *ngIf="orgao.orgao">
+                        <a [routerLink]="['/servidor', orgao.orgao?.id, 'view']">{{orgao.orgao?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/orgao', orgao.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

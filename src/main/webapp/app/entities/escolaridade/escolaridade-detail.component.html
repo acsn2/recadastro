@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="escolaridade">
+            <h2><span>Escolaridade</span> {{escolaridade.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Cod Escolaridade</span></dt>
+                <dd>
+                    <span>{{escolaridade.codEscolaridade}}</span>
+                </dd>
+                <dt><span>Desc Escolaridade</span></dt>
+                <dd>
+                    <span>{{escolaridade.descEscolaridade}}</span>
+                </dd>
+                <dt><span>Escolaridade</span></dt>
+                <dd>
+                    <div *ngIf="escolaridade.escolaridade">
+                        <a [routerLink]="['/servidor', escolaridade.escolaridade?.id, 'view']">{{escolaridade.escolaridade?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/escolaridade', escolaridade.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
